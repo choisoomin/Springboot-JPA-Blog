@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.test.DAO.userDAO">
+	<insert id="userinput">
+		insert into members values (members_seq.nextval,
+		#{name}, #{gender}, #{birth}, #{pnum}, #{email}, #{id}, #{pwd})
+	</insert>
+	<select id="check" parameterType="String" resultType="Integer">
+		select count(*) from members where id=#{id}
+	</select>
+
+</mapper>
